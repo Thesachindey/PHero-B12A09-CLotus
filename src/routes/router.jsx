@@ -7,6 +7,7 @@ import RegisterPage from "../pages/RegisterPage";
 import GameDetailsPage from "../pages/GameDetailsPage";
 import MyProfilePage from "../pages/MyProfilePage";
 import NotFoundPage from "../pages/NotFoundPage";
+import LoadingPage from "../pages/LoadingPage";
 
 const router = createBrowserRouter([
     {
@@ -19,8 +20,10 @@ const router = createBrowserRouter([
                 element: <HomePage />
             },
             {
-                path: '/about',
-                element: <AboutPage />
+                path: '/all-games',
+                element: <AboutPage />,
+                loader: () => fetch('/gameData.json'),
+               hydrateFallbackElement:<LoadingPage></LoadingPage>
             },
             {
                 path: '/login',

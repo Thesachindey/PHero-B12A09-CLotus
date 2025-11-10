@@ -17,7 +17,7 @@ const PopularGames = () => {
                 <div className=' ms:p-2 md:p-10 grid ms:grid-col-1 md:grid-cols-2 lg:grid-cols-3 gap-10  '>
 
                     {
-                        games.map((game) => <GameCard key={game.id} game={game} />)
+                        games.filter((game) => Number(game.ratings) >= 4.8).map((game) => <GameCard key={game.id} game={game} />)
                     }
                 </div>
             </div>

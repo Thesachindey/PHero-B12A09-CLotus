@@ -2,6 +2,7 @@ import React, { Suspense } from 'react';
 import Banner from '../components/Banner';
 import PopularGames from '../components/PopularGames';
 import { PacmanLoader } from 'react-spinners';
+import LoadingPage from './LoadingPage';
 
 const HomePage = () => {
     return (
@@ -10,7 +11,7 @@ const HomePage = () => {
             <Banner />
 
             {/* popular games section  */}
-            <Suspense fallback={<span><PacmanLoader /></span>}>
+            <Suspense fallback={<LoadingPage/>}>
                 <PopularGames />
             </Suspense>
         </div>

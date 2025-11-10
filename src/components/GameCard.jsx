@@ -4,8 +4,8 @@ const GameCard = ({ game }) => {
     const { id, title, coverPhoto, category, downloadLink, description, ratings, developer } = game;
 
     return (
-        <div>
-            <div className="card bg-base-100 h-full w-full shadow-xl cursor-pointer rounded-lg">
+        <div className=' h-full w-full'>
+            <div className="card bg-base-100 h-full w-full shadow-xl cursor-pointer rounded-lg transform transition-transform duration-800 ease-in-out hover:scale-105">
                 <figure>
                     <img
                         src={coverPhoto}
