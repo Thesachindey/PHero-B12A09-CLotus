@@ -1,0 +1,102 @@
+[
+    {
+        "id": "1",
+        "title": "Player Unknown's Battle Ground: PUBG",
+        "coverPhoto": "https://i.ibb.co.com/WWdKybY0/pubg.jpg",
+        "category": "FPS",
+        "downloadLink": "https://www.pubgmobile.com/en-US/home.shtml",
+        "description": "PUBG is a battle royale game where players fight for survival using strategy, teamwork, and skill on large open maps.",
+        "ratings": "4.5",
+        "developer": "Krafton"
+    },
+    {
+        "id": "2",
+        "title": "Call of Duty: Warzone",
+        "coverPhoto": "https://i.ibb.co.com/8LXCTpPg/cod-warzone.jpg",
+        "category": "FPS",
+        "downloadLink": "https://www.callofduty.com/warzone",
+        "description": "Call of Duty: Warzone delivers high-octane combat in massive multiplayer maps with realistic graphics and tactical gameplay.",
+        "ratings": "4.7",
+        "developer": "Infinity Ward"
+    },
+    {
+        "id": "3",
+        "title": "Fortnite",
+        "coverPhoto": "https://i.ibb.co.com/x82r9B37/fortnite.jpg",
+        "category": "Battle Royale",
+        "downloadLink": "https://www.epicgames.com/fortnite/",
+        "description": "Fortnite is a vibrant, fast-paced battle royale where players build, shoot, and outlast opponents to claim victory.",
+        "ratings": "4.4",
+        "developer": "Epic Games"
+    },
+    {
+        "id": "4",
+        "title": "Valorant",
+        "coverPhoto": "https://i.ibb.co.com/zVy683S0/valorant.jpg",
+        "category": "Tactical Shooter",
+        "downloadLink": "https://playvalorant.com/",
+        "description": "Valorant combines precise gunplay and unique agent abilities in intense 5v5 tactical matches.",
+        "ratings": "4.6",
+        "developer": "Riot Games"
+    },
+    {
+        "id": "5",
+        "title": "Apex Legends",
+        "coverPhoto": "https://i.ibb.co.com/nsbZ3qT2/apex-legends.jpg",
+        "category": "Battle Royale",
+        "downloadLink": "https://www.ea.com/games/apex-legends",
+        "description": "Apex Legends is a fast-paced hero shooter set in the Titanfall universe, focusing on teamwork and strategy.",
+        "ratings": "4.5",
+        "developer": "Respawn Entertainment"
+    },
+    {
+        "id": "6",
+        "title": "Counter-Strike 2",
+        "coverPhoto": "https://i.ibb.co.com/6cG6jrzk/counter-strike-2.jpg",
+        "category": "FPS",
+        "downloadLink": "https://store.steampowered.com/app/730/CounterStrike_2/",
+        "description": "Counter-Strike 2 continues the legacy of tactical shooting with new visuals, physics, and competitive play.",
+        "ratings": "4.8",
+        "developer": "Valve"
+    },
+    {
+        "id": "7",
+        "title": "Minecraft",
+        "coverPhoto": "https://i.ibb.co.com/DfGWKc8N/minecraft.jpg",
+        "category": "Sandbox",
+        "downloadLink": "https://www.minecraft.net/",
+        "description": "Minecraft is a creative sandbox game where players can build, explore, and survive in infinite blocky worlds.",
+        "ratings": "4.9",
+        "developer": "Mojang Studios"
+    },
+    {
+        "id": "8",
+        "title": "Grand Theft Auto V",
+        "coverPhoto": "https://i.ibb.co.com/N6rXtmSR/gta-5.jpg",
+        "category": "Action-Adventure",
+        "downloadLink": "https://store.rockstargames.com/game/buy-gta-v",
+        "description": "GTA V offers a massive open world filled with missions, heists, and online multiplayer chaos.",
+        "ratings": "4.8",
+        "developer": "Rockstar Games"
+    },
+    {
+        "id": "9",
+        "title": "Red Dead Redemption 2",
+        "coverPhoto": "https://i.ibb.co.com/RT6Vjyxq/red-dead-redemption.jpg",
+        "category": "Action-Adventure",
+        "downloadLink": "https://www.rockstargames.com/reddeadredemption2/",
+        "description": "RDR2 is an epic story-driven western adventure with stunning visuals and an immersive world.",
+        "ratings": "4.9",
+        "developer": "Rockstar Games"
+    },
+    {
+        "id": "10",
+        "title": "Cyberpunk 2077",
+        "coverPhoto": "https://i.ibb.co.com/1fQk8PTX/v-cyberpunk-2077.jpg",
+        "category": "RPG",
+        "downloadLink": "https://www.cyberpunk.net/",
+        "description": "Cyberpunk 2077 is a futuristic open-world RPG set in Night City, where choices shape your story.",
+        "ratings": "4.3",
+        "developer": "CD Projekt Red"
+    }
+]
