@@ -20,7 +20,7 @@ const Navbar = () => {
         });
     }
 
-   
+
     return (
         <div className=' bg-base-100 shadow-sm'>
             <MyContainer>
@@ -42,9 +42,11 @@ const Navbar = () => {
                                         user
                                             ?
                                             <div className='flex gap-5 flex-row'>
-                                                <img src={(user?.photoURL) || 'https://images.unsplash.com/profile-1739313197804-6f9cf0af7ed3image?ixlib=rb-4.1.0&auto=format&fit=crop&q=60&w=32&dpr=2&crop=faces&bg=%23fff&h=32'}
-                                                    className="h-10 w-10 bg-cover rounded-full mx-auto" alt={user.name} />
-                                                <button onClick={handleLogOut} className="btn btn-outline bg-green-400 ">LogOut</button>
+                                                <Link className='cursor-pointer' to={'/my-profile'}>
+                                                    <img src={(user?.photoURL) || 'https://images.unsplash.com/profile-1739313197804-6f9cf0af7ed3image?ixlib=rb-4.1.0&auto=format&fit=crop&q=60&w=32&dpr=2&crop=faces&bg=%23fff&h=32'}
+                                                        className="h-10 w-10 bg-cover rounded-full  mx-auto" alt={user.name} />
+                                                </Link>
+                                                <button onClick={handleLogOut} className="bg-green-400 text-white  hover:bg-green-500 btn btn-outline border-black transition-colors cursor-pointer ">LogOut</button>
                                             </div>
                                             :
                                             <div className="auth-btn space-y-4">
@@ -72,9 +74,11 @@ const Navbar = () => {
                                 user
                                     ?
                                     <div className='flex gap-5 flex-row'>
-                                        <img src={(user?.photoURL) || 'https://images.unsplash.com/profile-1739313197804-6f9cf0af7ed3image?ixlib=rb-4.1.0&auto=format&fit=crop&q=60&w=32&dpr=2&crop=faces&bg=%23fff&h=32'}
-                                            className="h-10 w-10 bg-cover rounded-full mx-auto" alt={user.name} />
-                                        <button onClick={handleLogOut} className="btn btn-outline bg-green-400 ">LogOut</button>
+                                        <Link className='cursor-pointer' to={'/my-profile'}>
+                                            <img src={(user?.photoURL) || 'https://images.unsplash.com/profile-1739313197804-6f9cf0af7ed3image?ixlib=rb-4.1.0&auto=format&fit=crop&q=60&w=32&dpr=2&crop=faces&bg=%23fff&h=32'}
+                                                className="h-10 w-10 bg-cover rounded-full  mx-auto" alt={user.name} />
+                                        </Link>
+                                        <button onClick={handleLogOut} className="bg-green-400 text-white  hover:bg-green-500 btn btn-outline border-black transition-colors cursor-pointer ">LogOut</button>
                                     </div>
                                     :
                                     <div className="auth-btn space-x-4">

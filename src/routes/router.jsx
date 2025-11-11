@@ -11,6 +11,7 @@ import LoadingPage from "../pages/LoadingPage";
 import PopularGames from "../pages/PopularGames";
 import AuthLayouts from "../layouts/AuthLayouts";
 import PrivateRoute from "../provider/PrivateRoute";
+import UpdateInfo from "../components/UpdateInfo";
 
 const router = createBrowserRouter([
     {
@@ -45,7 +46,11 @@ const router = createBrowserRouter([
             },
             {
                 path: '/my-profile',
-                element: <MyProfilePage />
+                element:
+                    <PrivateRoute>
+                        <MyProfilePage />
+                    </PrivateRoute>,
+
             },
             {
                 path: "/*",
@@ -65,6 +70,10 @@ const router = createBrowserRouter([
             {
                 path: '/auth/register',
                 element: <RegisterPage />
+            },
+            {
+                path: '/auth/update-profile',
+                element: <UpdateInfo />
             }
         ]
 
