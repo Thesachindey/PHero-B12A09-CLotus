@@ -18,7 +18,7 @@ const Navbar = () => {
                                 className="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow">
                                 <li><MyLink to={'/'}>Home</MyLink></li>
                                 <li>
-                                    <MyLink to={'/all-games'}>All Games</MyLink>
+                                    <MyLink to={'/all-games/:id'}>All Games</MyLink>
                                 </li>
                                 <li>
                                     <MyLink to={'/login'}>LogIn</MyLink>
@@ -39,8 +39,8 @@ const Navbar = () => {
                             </li>
                         </ul>
                         <div className="auth-btn space-x-4">
-                            <MyLink to={'/login'} className="btn btn-outline ">LogIn</MyLink>
-                            <MyLink to={'/register'} className="btn btn-outline "> Registration</MyLink>
+                            <MyLink to={'/auth/login'} className="btn btn-outline ">LogIn</MyLink>
+                            <MyLink to={'/auth/register'} className="btn btn-outline "> Registration</MyLink>
                         </div>
                     </div>
                 </div>

@@ -9,7 +9,7 @@ const AboutPage = () => {
     return (
         <div>
             <h1 className='text-center text-6xl my-12 font-bold'>All Games</h1>
-            <div className='grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5  p-10 '>
+            <div className='grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8  p-10 '>
 
                 {data.map((game) => (
                     <motion.div

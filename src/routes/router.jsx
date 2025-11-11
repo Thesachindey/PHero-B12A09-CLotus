@@ -8,40 +8,59 @@ import GameDetailsPage from "../pages/GameDetailsPage";
 import MyProfilePage from "../pages/MyProfilePage";
 import NotFoundPage from "../pages/NotFoundPage";
 import LoadingPage from "../pages/LoadingPage";
+import PopularGames from "../pages/PopularGames";
+import AuthLayouts from "../layouts/AuthLayouts";
 
 const router = createBrowserRouter([
     {
         path: "/",
         element: <HomeLayouts />,
-        errorElement: <NotFoundPage />, //  This will show when route not found
         children: [
             {
                 index: true,
                 element: <HomePage />
             },
             {
+                path: '/popular-games',
+                element: <PopularGames />
+            },
+            {
                 path: '/all-games',
                 element: <AboutPage />,
                 loader: () => fetch('/gameData.json'),
-               hydrateFallbackElement:<LoadingPage></LoadingPage>
+                hydrateFallbackElement: <LoadingPage></LoadingPage>
             },
             {
-                path: '/login',
-                element: <LoginPage />
-            },
-            {
-                path: '/register',
-                element: <RegisterPage />
-            },
-            {
-                path: '/game-details',
-                element: <GameDetailsPage />
+                path: '/game-details/:id',
+                element: <GameDetailsPage />,
+                loader: () => fetch('/gameData.json'),
+                hydrateFallbackElement: <LoadingPage></LoadingPage>
             },
             {
                 path: '/my-profile',
                 element: <MyProfilePage />
+            },
+            {
+                path: "/*",
+                element: <NotFoundPage />,
+
             }
         ]
+    },
+     {
+        path: "/auth",
+        element: <AuthLayouts />,
+        children: [
+            {
+                path: '/auth/login',
+                element: <LoginPage />
+            },
+            {
+                path: '/auth/register',
+                element: <RegisterPage />
+            }
+        ]
+
     },
 ]);
 

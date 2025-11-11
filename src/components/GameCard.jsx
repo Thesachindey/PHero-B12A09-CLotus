@@ -1,11 +1,12 @@
 import React from 'react';
+import { Link } from 'react-router';
 
 const GameCard = ({ game }) => {
     const { id, title, coverPhoto, category, downloadLink, description, ratings, developer } = game;
 
     return (
         <div className=' h-full w-full'>
-            <div className="card bg-base-100 h-full w-full shadow-xl cursor-pointer rounded-lg transform transition-transform duration-800 ease-in-out hover:scale-105">
+            <Link to={`/game-details/${id}`} className="card bg-base-100 h-full w-full shadow-xl cursor-pointer rounded-lg transform transition-transform duration-800 ease-in-out hover:scale-105">
                 <figure>
                     <img
                         src={coverPhoto}
@@ -22,7 +23,7 @@ const GameCard = ({ game }) => {
                         <div className="badge badge-outline bg-green-200 text-green-700">{developer}</div>
                     </div>
                 </div>
-            </div>
+            </Link>
         </div>
     );
 };

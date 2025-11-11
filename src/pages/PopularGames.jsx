@@ -1,6 +1,6 @@
 import React, { use } from 'react';
-import GameCard from './GameCard';
-import MyContainer from './MyContainer';
+import GameCard from '../components/GameCard';
+import MyContainer from '../components/MyContainer';
 
 
 const gamesPromise = fetch('/gameData.json').then(res => res.json())
