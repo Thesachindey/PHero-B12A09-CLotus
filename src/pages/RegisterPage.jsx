@@ -5,8 +5,9 @@ import { AuthContext } from '../provider/AuthProvider';
 const RegisterPage = () => {
     const { createUser, setUser, updateUser } = use(AuthContext);
     const navigate = useNavigate();
-
     
+
+
     const handelRegister = (e) => {
         e.preventDefault();
         const form = e.target;

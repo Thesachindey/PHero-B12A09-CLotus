@@ -10,6 +10,7 @@ import NotFoundPage from "../pages/NotFoundPage";
 import LoadingPage from "../pages/LoadingPage";
 import PopularGames from "../pages/PopularGames";
 import AuthLayouts from "../layouts/AuthLayouts";
+import PrivateRoute from "../provider/PrivateRoute";
 
 const router = createBrowserRouter([
     {
@@ -26,13 +27,19 @@ const router = createBrowserRouter([
             },
             {
                 path: '/all-games',
-                element: <AboutPage />,
+                element:
+                    <PrivateRoute>
+                        <AboutPage />
+                    </PrivateRoute>,
                 loader: () => fetch('/gameData.json'),
                 hydrateFallbackElement: <LoadingPage></LoadingPage>
             },
             {
                 path: '/game-details/:id',
-                element: <GameDetailsPage />,
+                element:
+                    <PrivateRoute>
+                        <GameDetailsPage />
+                    </PrivateRoute>,
                 loader: () => fetch('/gameData.json'),
                 hydrateFallbackElement: <LoadingPage></LoadingPage>
             },
@@ -47,7 +54,7 @@ const router = createBrowserRouter([
             }
         ]
     },
-     {
+    {
         path: "/auth",
         element: <AuthLayouts />,
         children: [

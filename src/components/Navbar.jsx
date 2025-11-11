@@ -3,6 +3,7 @@ import { Link } from 'react-router';
 import MyContainer from './MyContainer';
 import MyLink from './MyLink';
 import { AuthContext } from '../provider/AuthProvider';
+import { toast } from 'react-toastify';
 
 
 const Navbar = () => {
@@ -12,13 +13,14 @@ const Navbar = () => {
         console.log('user trying to log out')
         logOut().then(() => {
             // Sign-out successful.
-            alert("You logged out successfully!");
+            toast.success("You logged out successfully!");
         }).catch((error) => {
             // An error
-            console.log(error);
+            toast.error(error.code);
         });
     }
 
+   
     return (
         <div className=' bg-base-100 shadow-sm'>
             <MyContainer>
@@ -30,10 +32,10 @@ const Navbar = () => {
                             </div>
                             <ul
                                 tabIndex="-1"
-                                className="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow">
+                                className="menu menu-sm dropdown-content space-y-3 bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow">
                                 <li><MyLink to={'/'}>Home</MyLink></li>
                                 <li>
-                                    <MyLink to={'/all-games/:id'}>All Games</MyLink>
+                                    <MyLink to={'/all-games'}>All Games</MyLink>
                                 </li>
                                 <div className="auth-btn space-y-4">
                                     {
