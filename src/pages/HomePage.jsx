@@ -7,7 +7,7 @@ import LoadingPage from './LoadingPage';
 const HomePage = () => {
   
     return (
-        <div >
+        <div className='mb-10' >
             {/* this is banner  */}
             <Banner />
            

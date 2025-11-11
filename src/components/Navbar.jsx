@@ -3,7 +3,7 @@ import { Link } from 'react-router';
 import MyContainer from './MyContainer';
 import MyLink from './MyLink';
 import { AuthContext } from '../provider/AuthProvider';
-import { div } from 'framer-motion/client';
+
 
 const Navbar = () => {
     const { user, logOut } = use(AuthContext)
@@ -35,12 +35,24 @@ const Navbar = () => {
                                 <li>
                                     <MyLink to={'/all-games/:id'}>All Games</MyLink>
                                 </li>
-                                <li>
-                                    <MyLink to={'/login'}>LogIn</MyLink>
-                                </li>
-                                <li>
-                                    <MyLink to={'/register'}>Registration</MyLink>
-                                </li>
+                                <div className="auth-btn space-y-4">
+                                    {
+                                        user
+                                            ?
+                                            <div className='flex gap-5 flex-row'>
+                                                <img src={(user?.photoURL) || 'https://images.unsplash.com/profile-1739313197804-6f9cf0af7ed3image?ixlib=rb-4.1.0&auto=format&fit=crop&q=60&w=32&dpr=2&crop=faces&bg=%23fff&h=32'}
+                                                    className="h-10 w-10 bg-cover rounded-full mx-auto" alt={user.name} />
+                                                <button onClick={handleLogOut} className="btn btn-outline bg-green-400 ">LogOut</button>
+                                            </div>
+                                            :
+                                            <div className="auth-btn space-y-4">
+                                                <MyLink to={'/auth/login'} className="btn btn-outline ">LogIn</MyLink>
+                                                <MyLink to={'/auth/register'} className="btn btn-outline ">Registration</MyLink>
+                                            </div>
+                                    }
+
+
+                                </div>
 
                             </ul>
                         </div>
@@ -60,12 +72,12 @@ const Navbar = () => {
                                     <div className='flex gap-5 flex-row'>
                                         <img src={(user?.photoURL) || 'https://images.unsplash.com/profile-1739313197804-6f9cf0af7ed3image?ixlib=rb-4.1.0&auto=format&fit=crop&q=60&w=32&dpr=2&crop=faces&bg=%23fff&h=32'}
                                             className="h-10 w-10 bg-cover rounded-full mx-auto" alt={user.name} />
-                                        <button onClick={handleLogOut} className="btn btn-outline ">LogOut</button>
+                                        <button onClick={handleLogOut} className="btn btn-outline bg-green-400 ">LogOut</button>
                                     </div>
                                     :
                                     <div className="auth-btn space-x-4">
                                         <MyLink to={'/auth/login'} className="btn btn-outline ">LogIn</MyLink>
-                                        <MyLink to={'/auth/register'} className="btn btn-outline ">Register</MyLink>
+                                        <MyLink to={'/auth/register'} className="btn btn-outline ">Registration</MyLink>
                                     </div>
                             }
 
