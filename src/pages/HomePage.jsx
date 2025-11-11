@@ -8,6 +8,7 @@ const HomePage = () => {
   
     return (
         <div className='mb-10' >
+             <title>GameHub-Home</title>
             {/* this is banner  */}
             <Banner />
            

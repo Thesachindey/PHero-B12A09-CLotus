@@ -16,6 +16,7 @@ const GameDetailsPage = () => {
 
     return (
         <div>
+             <title>Details-info</title>
            
                 <h2 className="text-4xl text-center pt-10 font-bold">
                     Info About <span className="text-green-400">{game.title}</span>

@@ -6,7 +6,7 @@ import { IoEyeOff } from 'react-icons/io5';
 import { toast } from 'react-toastify';
 
 const RegisterPage = () => {
-    const { createUser, setUser, updateUser,signInWithGoogleFunc } = use(AuthContext);
+    const { createUser, setUser, updateUser, signInWithGoogleFunc } = use(AuthContext);
     const navigate = useNavigate();
     const [nameError, setNameError] = useState('');
     const [passError, setPassError] = useState('');
@@ -88,6 +88,7 @@ const RegisterPage = () => {
 
     return (
         <div className='py-10'>
+             <title>Register</title>
             <div className='flex justify-center items-center min-h-screen'>
                 <div className="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl py-5 ">
                     <div className="px-10 space-y-5">
@@ -127,6 +128,14 @@ const RegisterPage = () => {
                             }
 
                             <button type='submit' className="bg-green-400 text-white px-5 py-2 rounded-lg w-full font-semibold hover:bg-green-500 btn btn-outline border-black transition-colors cursor-pointer mt-5">Register</button>
+
+
+                            {/* Divider */}
+                            <div className="flex items-center justify-center gap-2 my-2">
+                                <div className="h-px w-16 bg-black/30"></div>
+                                <span className="text-sm text-black/70">or</span>
+                                <div className="h-px w-16 bg-black/30"></div>
+                            </div>
 
                             {/* Google Signin */}
                             <button

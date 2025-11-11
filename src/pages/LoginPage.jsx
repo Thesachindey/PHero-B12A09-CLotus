@@ -1,5 +1,5 @@
 
-import React, { use, useState } from 'react';
+import React, { use, useRef, useState } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router';
 import { AuthContext } from '../provider/AuthProvider';
 import { GoogleAuthProvider, signInWithPopup } from 'firebase/auth';
@@ -18,11 +18,12 @@ const LoginPage = () => {
     const {
         signIn,
         signInWithGoogleFunc,
+        sendPasswordResetEmailFunc,
         user,
         setUser } = use(AuthContext);
     const location = useLocation();
     const navigate = useNavigate();
-
+    const emailRef = useRef(null);
 
     const handelLogIn = (event) => {
         event.preventDefault();
@@ -79,9 +80,43 @@ const LoginPage = () => {
             });
     };
 
+    // forgot pass 
+    const handleForgetPassword = () => {
+        const email = emailRef.current.value;
+
+        // 1️⃣ Check if the email field is empty
+        if (!email) {
+            toast.error('Please enter your email first!');
+            return;
+        }
+
+        // 2️⃣ Send the password reset email using Firebase
+        sendPasswordResetEmailFunc(email)
+            .then(() => {
+                toast.success('Password reset email sent! Check your inbox.');
+            })
+            .catch((error) => {
+                const errorCode = error.code;
+
+                // 3️⃣ Handle common Firebase errors with friendly messages
+                if (errorCode === 'auth/invalid-email') {
+                    toast.error('Invalid email address.');
+                } else if (errorCode === 'auth/user-not-found') {
+                    toast.error('No account found with this email.');
+                } else if (errorCode === 'auth/missing-email') {
+                    toast.error('Please enter your email before trying again.');
+                } else {
+                    toast.error('Something went wrong. Please try again later.');
+                }
+
+                console.error('Password reset error:', error);
+            });
+    };
+
 
     return (
         <div>
+            <title>Gamehub - LogIn</title>
             <div className='flex justify-center items-center min-h-screen'>
                 <div className="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl py-5 ">
                     <div className="px-10 space-y-5">
@@ -92,13 +127,13 @@ const LoginPage = () => {
                         <fieldset className="fieldset">
                             {/* email  */}
                             <label className="label">Email</label>
-                            <input name='email' type="email" className="input" placeholder="Email"
+                            <input ref={emailRef} name='email' type="email" className="input" placeholder="Email"
                                 required
                             />
 
                             {/* Password  */}
                             <div className="relative">
-                            <label className="label">Password</label>
+                                <label className="label">Password</label>
                                 <input
                                     type={show ? 'text' : 'password'}
                                     name="password"
@@ -113,7 +148,13 @@ const LoginPage = () => {
                                     {show ? <FaEye /> : <IoEyeOff />}
                                 </span>
                             </div>
-                            <div><a className="link link-hover">Forgot password?</a></div>
+                            <button
+                                className="hover:underline cursor-pointer"
+                                onClick={handleForgetPassword}
+                                type="button"
+                            >
+                                Forget password?
+                            </button>
                             {
                                 error && <p className='text-red-600 font-semibold mt-2'>{error}</p>
                             }
@@ -122,9 +163,9 @@ const LoginPage = () => {
 
                             {/* Divider */}
                             <div className="flex items-center justify-center gap-2 my-2">
-                                <div className="h-px w-16 bg-white/30"></div>
-                                <span className="text-sm text-white/70">or</span>
-                                <div className="h-px w-16 bg-white/30"></div>
+                                <div className="h-px w-16 bg-black/30"></div>
+                                <span className="text-sm text-black/70">or</span>
+                                <div className="h-px w-16 bg-black/30"></div>
                             </div>
 
                             {/* Google Signin */}

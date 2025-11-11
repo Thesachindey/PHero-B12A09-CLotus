@@ -5,9 +5,10 @@ import GameCard from '../components/GameCard';
 
 const AboutPage = () => {
     const data = useLoaderData();
-    console.log(data);
+    // console.log(data);
     return (
         <div>
+             <title>All-Games</title>
             <h1 className='text-center text-6xl my-12 font-bold'>All Games</h1>
             <div className='grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8  p-10 '>
 

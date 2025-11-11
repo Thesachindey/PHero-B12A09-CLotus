@@ -39,6 +39,7 @@ const UpdateInfo = () => {
 
     return (
         <div className='py-10'>
+             <title>Update profile</title>
             <div className='flex justify-center items-center min-h-screen'>
                 <div className="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl py-5 ">
                     <div className="px-10 space-y-5">
