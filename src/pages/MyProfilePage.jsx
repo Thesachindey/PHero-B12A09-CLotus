@@ -28,7 +28,7 @@ const MyProfilePage = () => {
                 <div className='text-center space-x-4'>
 
                 <Link to={'/auth/update-profile'} className="btn bg-green-400 hover:bg-green-500 btn-outline text-white border-black ">Update Profile</Link>
-                <button onClick={handleLogOut} className="btn bg-green-400 hover:bg-green-500 btn-outline text-white border-black ">Sign Out</button>
+                <button onClick={handleLogOut} className="btn bg-green-400 hover:bg-green-500 btn-outline text-white border-black ">LogOut</button>
 
                 </div>
             </div>

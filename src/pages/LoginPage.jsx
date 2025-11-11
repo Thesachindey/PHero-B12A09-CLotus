@@ -149,7 +149,7 @@ const LoginPage = () => {
                                 </span>
                             </div>
                             <button
-                                className="hover:underline cursor-pointer"
+                                className="hover:underline text-start hover:text-green-400 cursor-pointer"
                                 onClick={handleForgetPassword}
                                 type="button"
                             >
