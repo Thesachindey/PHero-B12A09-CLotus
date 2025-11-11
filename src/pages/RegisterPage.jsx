@@ -1,7 +1,45 @@
-import React from 'react';
-import { Link } from 'react-router';
+import React, { use } from 'react';
+import { Link, useNavigate } from 'react-router';
+import { AuthContext } from '../provider/AuthProvider';
 
 const RegisterPage = () => {
+    const { createUser, setUser, updateUser } = use(AuthContext);
+    const navigate = useNavigate();
+
+    
+    const handelRegister = (e) => {
+        e.preventDefault();
+        const form = e.target;
+        const name = form.name.value;
+        const photo = form.photo.value;
+        const email = form.email.value;
+        const password = form.password.value;
+
+        // console.log({ name, photo, email, password });
+        createUser(email, password)
+            .then(result => {
+                const loggedUser = result.user;
+                // console.log(loggedUser)
+                updateUser({ displayName: name, photoURL: photo })
+                    .then(() => {
+                        setUser({ ...loggedUser, displayName: name, photoURL: photo });
+                        navigate('/');
+                    }).catch((error) => {
+                        console.log(error);
+                        setUser(loggedUser);
+                    })
+            })
+            .catch((error) => {
+                // const errorCode = error.code;
+                const errorMessage = error.message;
+                alert(errorMessage);
+                //..
+            });
+
+
+    }
+
+
     return (
         <div>
             <div className='flex justify-center items-center min-h-screen'>
@@ -10,7 +48,7 @@ const RegisterPage = () => {
                         <h2 className='font-bold text-2xl text-center'> Register your account</h2>
                         <hr className=' px-10 text-base-300' />
                     </div>
-                    <form onSubmit={''} className="card-body">
+                    <form onSubmit={handelRegister} className="card-body">
                         <fieldset className="fieldset">
 
                             {/* Name  */}
