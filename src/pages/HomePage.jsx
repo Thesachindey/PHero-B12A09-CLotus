@@ -1,4 +1,4 @@
-import React, { Suspense, use } from 'react';
+import React, { Suspense } from 'react';
 import Banner from '../components/Banner';
 import PopularGames from './PopularGames';
 import { PacmanLoader } from 'react-spinners';

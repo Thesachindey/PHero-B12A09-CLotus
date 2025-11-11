@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router';
 
 const GameCard = ({ game }) => {
-    const { id, title, coverPhoto, category, downloadLink, description, ratings, developer } = game;
+    const { id, title, coverPhoto, category,description, ratings, developer } = game;
 
     return (
         <div className=' h-full w-full'>
